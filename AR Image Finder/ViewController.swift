@@ -64,6 +64,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let imageAnchor = anchor as? ARImageAnchor else {
+            return
+        }
+        
+        print(#function, "Нашли картинку \(imageAnchor.referenceImage.name)")
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
