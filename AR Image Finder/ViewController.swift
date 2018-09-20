@@ -88,6 +88,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let planeNode = SCNNode(geometry: plane)
         planeNode.opacity = 0.25
+        planeNode.eulerAngles.x = -Float.pi / 2
         
         node.addChildNode(planeNode)
     }
