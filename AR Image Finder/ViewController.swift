@@ -5,14 +5,35 @@
 //  Created by Denis Bystruev on 20/09/2018.
 //  Copyright © 2018 Denis Bystruev. All rights reserved.
 //
+//  See WWDC 2018 Session 602: What's New in ARKit 2
+//  https://developer.apple.com/videos/play/wwdc2018-602/?time=2464
 
-import UIKit
-import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
-
+// MARK: - Properties
+class ViewController: UIViewController {
+    
     @IBOutlet var sceneView: ARSCNView!
+    
+    // Create video player
+    let videoPlayer: AVPlayer = {
+        
+        // Load video from the bundle
+        guard let url = Bundle.main.url(forResource: "finversia",
+                                        withExtension: "mov",
+                                        subdirectory: "art.scnassets")
+            else {
+                print("Could not find video file finversia.mov")
+                return AVPlayer()
+        }
+        
+        return AVPlayer(url: url)
+    }()
+    
+}
+
+// MARK: - UIViewController
+extension ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +42,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         
         // Create a new scene
         let scene = SCNScene()
@@ -36,79 +57,72 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARImageTrackingConfiguration()
         
+        // Images to be tracked
         let referenceImages = ARReferenceImage.referenceImages(
             inGroupNamed: "AR Resources",
             bundle: nil
-        )!
+            )!
         
+        // Track the images
         configuration.trackingImages = referenceImages
-
+        
+        // Set maximum number of images to track in parallel
+        configuration.maximumNumberOfTrackedImages = 2
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
         // Pause the view's session
         sceneView.session.pause()
+        
+        super.viewWillDisappear(animated)
     }
+    
+}
 
-    // MARK: - ARSCNViewDelegate
+// MARK: - ARSCNViewDelegate
+extension ViewController: ARSCNViewDelegate {
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
+    // Create and configure node for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
-        switch anchor {
-        case let imageAncor as ARImageAnchor:
-            nodeAdded(node, for: imageAncor)
-        case let planeAncor as ARPlaneAnchor:
-            nodeAdded(node, for: planeAncor)
-        default:
-            print("Нашли якорь, но это не плоскость и не картинка")
-        }
+        guard let imageAnchor = anchor as? ARImageAnchor else { return nil }
+        
+        return node(for: imageAnchor)
     }
     
-    func nodeAdded(_ node: SCNNode, for imageAncor: ARImageAnchor) {
-        let referenceImage = imageAncor.referenceImage
+}
+
+// MARK: - Methods
+extension ViewController {
+    
+    func node(for imageAncor: ARImageAnchor) -> SCNNode {
+        // Get reference image size
+        let referenceSize = imageAncor.referenceImage.physicalSize
         
+        // Create a plane
         let plane = SCNPlane(
-            width: referenceImage.physicalSize.width,
-            height: referenceImage.physicalSize.height
+            width: referenceSize.width,
+            height: referenceSize.height
         )
         
-        plane.firstMaterial?.diffuse.contents = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        // Set AVPlayer as the plane's texture and play
+        plane.firstMaterial?.diffuse.contents = videoPlayer
+        videoPlayer.play()
         
+        // Create a node matching plane geometry
         let planeNode = SCNNode(geometry: plane)
-        planeNode.opacity = 0.25
-        planeNode.eulerAngles.x = -Float.pi / 2
         
+        // Rotate the plane to match the anchor
+        planeNode.eulerAngles.x = -.pi / 2
+        
+        // Create a node to return
+        let node = SCNNode()
         node.addChildNode(planeNode)
+        
+        return node
     }
     
-    func nodeAdded(_ node: SCNNode, for planAncor: ARPlaneAnchor) {
-        
-    }
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
-    }
 }

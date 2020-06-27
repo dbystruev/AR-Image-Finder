@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		699BE89024A79D0D0093DABA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 699BE88F24A79D0D0093DABA /* art.scnassets */; };
 		69A1F18C21542205008F77DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1F18B21542205008F77DF /* AppDelegate.swift */; };
-		69A1F18E21542205008F77DF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A1F18D21542205008F77DF /* art.scnassets */; };
 		69A1F19021542205008F77DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1F18F21542205008F77DF /* ViewController.swift */; };
 		69A1F19321542205008F77DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A1F19121542205008F77DF /* Main.storyboard */; };
 		69A1F1952154220E008F77DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A1F1942154220E008F77DF /* Assets.xcassets */; };
@@ -16,9 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		699BE88F24A79D0D0093DABA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		69A1F18821542205008F77DF /* AR Image Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Image Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A1F18B21542205008F77DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69A1F18D21542205008F77DF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		69A1F18F21542205008F77DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69A1F19221542205008F77DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69A1F1942154220E008F77DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,12 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				69A1F18B21542205008F77DF /* AppDelegate.swift */,
-				69A1F18D21542205008F77DF /* art.scnassets */,
-				69A1F18F21542205008F77DF /* ViewController.swift */,
-				69A1F19121542205008F77DF /* Main.storyboard */,
+				699BE88F24A79D0D0093DABA /* art.scnassets */,
 				69A1F1942154220E008F77DF /* Assets.xcassets */,
-				69A1F1962154220E008F77DF /* LaunchScreen.storyboard */,
 				69A1F1992154220E008F77DF /* Info.plist */,
+				69A1F1962154220E008F77DF /* LaunchScreen.storyboard */,
+				69A1F19121542205008F77DF /* Main.storyboard */,
+				69A1F18F21542205008F77DF /* ViewController.swift */,
 			);
 			path = "AR Image Finder";
 			sourceTree = "<group>";
@@ -126,8 +126,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69A1F18E21542205008F77DF /* art.scnassets in Resources */,
 				69A1F1982154220E008F77DF /* LaunchScreen.storyboard in Resources */,
+				699BE89024A79D0D0093DABA /* art.scnassets in Resources */,
 				69A1F1952154220E008F77DF /* Assets.xcassets in Resources */,
 				69A1F19321542205008F77DF /* Main.storyboard in Resources */,
 			);
@@ -288,7 +288,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.06.27;
+				CURRENT_PROJECT_VERSION = 2020.06.27.20;
 				DEVELOPMENT_TEAM = 8J39KF9DMS;
 				INFOPLIST_FILE = "AR Image Finder/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -296,8 +296,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.learnSwift.AR-Image-Finder";
+				MARKETING_VERSION = 1.02;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.learnswift.photo-recognition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.06.27;
+				CURRENT_PROJECT_VERSION = 2020.06.27.20;
 				DEVELOPMENT_TEAM = 8J39KF9DMS;
 				INFOPLIST_FILE = "AR Image Finder/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -317,8 +317,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.learnSwift.AR-Image-Finder";
+				MARKETING_VERSION = 1.02;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.learnswift.photo-recognition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
