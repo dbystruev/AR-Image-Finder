@@ -1,14 +1,62 @@
 {
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "resources" : [
     {
-      "filename" : "100 RUB.arreferenceimage"
+      "filename" : "200_rubles_2017_obverse.arreferenceimage"
     },
     {
-      "filename" : "500 RUB.arreferenceimage"
+      "filename" : "200_rubles_2017_reverse.arreferenceimage"
+    },
+    {
+      "filename" : "2000_rubles_2017_obverse.arreferenceimage"
+    },
+    {
+      "filename" : "2000_rubles_2017_reverse.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_5_rubles_(1997)_back.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_5_rubles_(1997)_front.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_10_rubles_2004_back.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_10_rubles_2004_front.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_50_rubles_2004_back.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_50_rubles_2004_front.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_500_rubles_2010_back.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_500_rubles_2010_front.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_1000_rubles_2010_back.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_1000_rubles_2010_front.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_5000_rubles_2010_back.arreferenceimage"
+    },
+    {
+      "filename" : "Banknote_5000_rubles_2010_front.arreferenceimage"
+    },
+    {
+      "filename" : "Russia100rubles04back.arreferenceimage"
+    },
+    {
+      "filename" : "Russia100rubles04front.arreferenceimage"
     }
   ]
 }

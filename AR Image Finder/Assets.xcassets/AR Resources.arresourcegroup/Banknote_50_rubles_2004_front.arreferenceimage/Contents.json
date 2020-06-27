@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Banknote_50_rubles_2004_front.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "width" : 0.14999999999999999
+  }
+}

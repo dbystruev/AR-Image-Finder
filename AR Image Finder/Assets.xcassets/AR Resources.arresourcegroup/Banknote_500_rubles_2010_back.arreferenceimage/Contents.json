@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Banknote_500_rubles_2010_back.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "width" : 0.14999999999999999
+  }
+}
